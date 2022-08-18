@@ -4,6 +4,10 @@
 package basiclibrary;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
@@ -49,5 +53,31 @@ class LibraryTest {
         assertEquals(randomNumbers[3], sut.arrayOfArrays(randomNumbers));
         System.out.println(randomNumbers[3]);
     }
+    @Test public void anotherArrayOfArrays() {
+        Library sut = new Library();
+        int[][] weeklyMonthTemperatures = {
+                {66, 64, 58, 65, 71, 57, 60},
+                {57, 65, 65, 70, 72, 65, 51},
+                {55, 54, 60, 53, 59, 57, 61},
+                {65, 56, 55, 52, 55, 62, 57}
+        };
+        // figure out how to test this));
 
+    };
+    @Test public void winner() {
+        List<String> votes = new ArrayList<>();
+        Library sut = new Library();
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Bush");
+        votes.add("Shrub");
+        votes.add("Hedge");
+        votes.add("Shrub");
+        votes.add("Bush");
+        votes.add("Hedge");
+        votes.add("Bush");
+        assertEquals( "Bush received the most votes!",
+                sut.tally(votes));
+        System.out.println(sut.tally(votes));
+    }
 }
