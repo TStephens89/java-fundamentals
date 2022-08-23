@@ -4,7 +4,8 @@ public class Review {
     public String body;
     public String author;
     public int numberOfStars;
-    public Store store;
+    public Business business;
+    public String movie;
 
     public Review(String body, String author, int numberOfStars){
         this.body = body;
@@ -13,30 +14,39 @@ public class Review {
 
     }
 
-    public Review() {
+    public Review(String body, String author, int numberOfStars, String movie) {
+        this.author = author;
+        this.body = body;
+        reviewersStarRating(numberOfStars);
+        this.movie = movie;
 
     }
 
     public String getBody() {
+
         return body;
     }
 
     public String getAuthor() {
+
         return author;
     }
 
 
     public int getNumberOfStars() {
+
         return numberOfStars;
     }
 
 
     public Store getStore() {
+
         return store;
     }
 
-    public void setStore(Store store) {
-        this.store = store;
+    public void setBusiness(Business business) {
+
+        this.business = business;
     }
 
     public void reviewersStarRating(int stars){
@@ -47,8 +57,11 @@ public class Review {
     }
 
 
-   //I kept getting a weird output stackoverflow said use toString but I am unsure on why it is need ASK Alex or Ben
     public String toString(){
         return String.format("Review: " + this.body + " Reviewed by " + this.author + " Stars received: " + this.numberOfStars );
+    }
+    public interface Reviewer{
+        void addReview(Review review);
+        String toString();
     }
 }
