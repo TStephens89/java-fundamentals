@@ -38,12 +38,6 @@ public class Review {
         return numberOfStars;
     }
 
-
-    public Store getStore() {
-
-        return store;
-    }
-
     public void setBusiness(Business business) {
 
         this.business = business;
@@ -56,12 +50,11 @@ public class Review {
         this.numberOfStars = stars;
     }
 
-
     public String toString(){
         return String.format("Review: " + this.body + " Reviewed by " + this.author + " Stars received: " + this.numberOfStars );
     }
     public interface Reviewer{
-        void addReview(Review review);
+       public void addReview(Review review);
         String toString();
     }
 }

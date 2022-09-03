@@ -7,13 +7,14 @@ public class Restaurant extends Business {
     public int price;
 
      public Restaurant(String restaurantName, int starRating){
-        this.restaurantName = restaurantName;
+         super();
+         this.restaurantName = restaurantName;
         this.starRating = starRating;
         this.price = price;
 
     }
 
     public String toString(){
-         return String.format("Restaurant: %s, Price: %d", this.restaurantName, this.starRating, this.price)
+         return String.format("Restaurant: %s, Price: %d", this.restaurantName, this.starRating, this.price);
     }
 }

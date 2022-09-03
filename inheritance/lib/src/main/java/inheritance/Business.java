@@ -1,22 +1,22 @@
 package inheritance;
 
 
-public class Business extends Review{
+import java.util.ArrayList;
+
+public class Business{
 
     ArrayList<Review> restaurantReview = new ArrayList<>();
     public String name;
     public int price;
     public int stars;
 
+    public Business(String name, int stars, int price) {
+    }
 
-
-    public Store(String name, int stars, int price) {
-        this.name = name;
-        this.stars = stars;
-        this.price = price;
+    public Business() {
 
     }
-    @Override
+
     public void addReview(Review review) {
         restaurantReview.add(review);
         float starCounter = 0;
@@ -32,7 +32,7 @@ public class Business extends Review{
 
     public String toString(){
 
-        return String.format("Shop: %s\nPrice: %d\nStars: %d", this.name, this.priceCategory, this.stars);
+        return String.format("Shop: %s\nPrice: %d\nStars: %d", this.name, this.price, this.stars);
     }
 
 }

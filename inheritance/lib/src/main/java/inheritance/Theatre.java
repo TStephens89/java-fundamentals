@@ -1,5 +1,7 @@
 package inheritance;
 
+import java.util.ArrayList;
+
 public class Theatre extends Business {
     public String name;
     ArrayList<String> movies;

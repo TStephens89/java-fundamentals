@@ -1,11 +1,10 @@
 package inheritance;
 
-public class Shop extends Business {
+public class Shop {
 
     String description;
 
-    public Shop(String shopName, String description, int price, int stars) {
-        super(name, stars, price);
+    public Shop(String name, String description, int price, int stars) {
         this.description = description;
     }
 
