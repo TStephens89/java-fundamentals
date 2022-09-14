@@ -1,4 +1,5 @@
 
+
 package inheritance;
 
 public class Restaurant extends Business {
