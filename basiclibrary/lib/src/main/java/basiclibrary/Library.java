@@ -3,9 +3,13 @@
  */
 package basiclibrary;
 
+import com.google.common.base.Predicates;
+
 import java.util.*;
 
 public class Library {
+    private static Set<Integer>tempInArray;
+
     public boolean someLibraryMethod() {
         return true;
     }
@@ -70,6 +74,56 @@ public class Library {
 
         }
         return matrix[thisArray];
+    }
+    public String anotherArrayOfArrays(int[][] seattleWeatherArray) {
+        int high = 0;
+        int low = 2147483646;
+        HashSet<Object> tempInArray = new HashSet<>();
+
+        for (int i = 0; i < seattleWeatherArray.length; i++) {
+            for (int j = 0; j < seattleWeatherArray[i].length; j++) {
+                if (seattleWeatherArray[i][j] > high) {
+                    high = seattleWeatherArray[i][j];
+                }
+                if (seattleWeatherArray[i][j] < low) {
+                    low = seattleWeatherArray[i][j];
+                }
+                if (!tempInArray.contains(seattleWeatherArray[i][j])) {
+                    tempInArray.add(seattleWeatherArray[i][j]);
+                }
+            }
+        }
+        return tempsNotFound(low, high);
+    }
+    public String tempsNotFound(int min, int max) {
+        String result = new String("High: " + max + "Low: " + min);
+        for (int i = min; i <= max; i++) {
+            if (!tempInArray.contains(i)) {
+                result.join("Never saw temperature: " + i);
+            }
+        }
+        System.out.println(result.toString());
+        return result.toString();
+        // I do not know how but yesterday I was able to sout and see what I was receiving as an output today I am not so I am unsure on if this is working or not
+    }
+    public String tally(List<String> list) {
+        Map<String, Integer> tally = new HashMap<>();
+        for(String element : list) {
+            int count = tally.containsKey(element) ? tally.get(element) : 0;
+            tally.put(element, count += 1);
+        }
+
+        int largestKey = 0;
+        String winner = "";
+        for (Map.Entry<String, Integer> map : tally.entrySet()) {
+            int votes = map.getValue();
+            if (votes > largestKey) {
+                largestKey = votes;
+                winner = map.getKey();
+            }
+        }
+
+        return winner + " received the most votes!";
     }
 
 }
