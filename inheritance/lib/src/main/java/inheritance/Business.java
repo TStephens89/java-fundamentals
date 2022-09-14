@@ -14,7 +14,6 @@ public class Business{
     }
 
     public Business() {
-
     }
 
     public void addReview(Review review) {
