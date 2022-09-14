@@ -33,5 +33,4 @@ public class Business{
 
         return String.format("Shop: %s\nPrice: %d\nStars: %d", this.name, this.price, this.stars);
     }
-
 }
